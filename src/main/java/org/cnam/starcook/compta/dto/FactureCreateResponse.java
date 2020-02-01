@@ -1,18 +1,18 @@
-package org.cnam.starcook.compta.domain;
+package org.cnam.starcook.compta.dto;
 
-public class Facture {
+public class FactureCreateResponse {
     public long id;
     public String article;
     public String typeArticle;
     public String coordonnesCreancier;
-    public float montant;
+    public float solde;
 
-    public Facture(long id, String article, String typeArticle, String coordonnesCreancier, float montant) {
+    public FactureCreateResponse(long id, String article, String typeArticle, String coordonnesCreancier, float solde) {
         this.id = id;
         this.article = article;
         this.typeArticle = typeArticle;
         this.coordonnesCreancier = coordonnesCreancier;
-        this.montant = montant;
+        this.solde = solde;
     }
 
     public long getId() {
@@ -47,11 +47,11 @@ public class Facture {
         this.coordonnesCreancier = coordonnesCreancier;
     }
 
-    public float getMontant() {
-        return montant;
+    public float getSolde() {
+        return solde;
     }
 
-    public void setMontant(float montant) {
-        this.montant = montant;
+    public void setSolde(float solde) {
+        this.solde = solde;
     }
 }

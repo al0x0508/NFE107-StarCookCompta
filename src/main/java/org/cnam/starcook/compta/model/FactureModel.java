@@ -1,13 +1,37 @@
-package org.cnam.starcook.compta.domain;
+package org.cnam.starcook.compta.model;
 
-public class Facture {
-    public long id;
-    public String article;
-    public String typeArticle;
-    public String coordonnesCreancier;
-    public float montant;
+import javax.persistence.*;
 
-    public Facture(long id, String article, String typeArticle, String coordonnesCreancier, float montant) {
+@Entity
+@Table(name = "facture")
+public class FactureModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private long id;
+
+    @Column(name = "article")
+    private String article;
+
+    @Column(name = "typeArticle")
+    private String typeArticle;
+
+    @Column(name = "coordonnesCreancier")
+    private String coordonnesCreancier;
+
+    @Column(name = "montant")
+    private float montant;
+
+    public FactureModel(long id, String article, String typeArticle, String coordonnesCreancier, float montant) {
+        this.id = id;
+        this.article = article;
+        this.typeArticle = typeArticle;
+        this.coordonnesCreancier = coordonnesCreancier;
+        this.montant = montant;
+    }
+
+    public FactureModel(String article, String typeArticle, String coordonnesCreancier, float montant) {
         this.id = id;
         this.article = article;
         this.typeArticle = typeArticle;
