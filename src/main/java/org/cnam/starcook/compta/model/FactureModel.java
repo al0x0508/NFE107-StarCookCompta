@@ -32,7 +32,6 @@ public class FactureModel {
     }
 
     public FactureModel(String article, String typeArticle, String coordonnesCreancier, float montant) {
-        this.id = id;
         this.article = article;
         this.typeArticle = typeArticle;
         this.coordonnesCreancier = coordonnesCreancier;

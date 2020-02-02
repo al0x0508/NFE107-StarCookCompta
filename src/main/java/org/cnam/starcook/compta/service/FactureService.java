@@ -13,14 +13,14 @@ public class FactureService {
     @Autowired
     public Facture facture;
 
-    public Facture createNewFacture(String article, String typeArticle, String coordonnesCreancier, Float montant) {
+    public Facture createNewFacture(String article, String typeArticle, String coordonnesCreancier, float montant) {
         FactureModel factureModelToCreate = new FactureModel(article, typeArticle, coordonnesCreancier, montant);
         FactureModel factureModelSaved = factureRepository.save(factureModelToCreate);
 
         return new Facture(factureModelSaved.getId(), factureModelSaved.getArticle(), factureModelSaved.getTypeArticle(), factureModelSaved.getCoordonnesCreancier(), factureModelSaved.getMontant());
     }
 
-    public Facture getFacture(long id) {
+    public Facture getFactureById(long id) {
         FactureModel factureModelToGet = factureRepository.findOne(id);
 
         return new Facture(factureModelToGet.getId(), factureModelToGet.getArticle(), factureModelToGet.getTypeArticle(), factureModelToGet.getCoordonnesCreancier(), factureModelToGet.getMontant());

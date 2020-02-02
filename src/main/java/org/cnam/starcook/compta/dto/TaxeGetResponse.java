@@ -1,12 +1,10 @@
-package org.cnam.starcook.compta.domain;
+package org.cnam.starcook.compta.dto;
 
-public class Taxe {
-    public long id;
+public class TaxeGetResponse {
     public String typeArticle;
     public float indice;
 
-    public Taxe(long id, String typeArticle, float indice) {
-        this.id = id;
+    public TaxeGetResponse(String typeArticle, float indice) {
         this.typeArticle = typeArticle;
         this.indice = indice;
     }
@@ -25,13 +23,5 @@ public class Taxe {
 
     public void setIndice(float indice) {
         this.indice = indice;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 }
