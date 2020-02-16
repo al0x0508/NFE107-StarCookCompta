@@ -8,10 +8,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class FactureService {
-    private FactureRepository factureRepository;
-
     @Autowired
-    public Facture facture;
+    private FactureRepository factureRepository;
 
     public Facture createNewFacture(String article, String typeArticle, String coordonnesCreancier, float montant) {
         FactureModel factureModelToCreate = new FactureModel(article, typeArticle, coordonnesCreancier, montant);
